@@ -6,12 +6,13 @@ class CreateUserController {
     async create(request: Request, response: Response) {
 
         try {
-            const { name, email, admin } = request.body
+            const { name, email, admin, password } = request.body
             const createUserService = new CreateUserService();
             const user = await createUserService.execute({
                 email,
                 name,
-                admin
+                admin,
+                password
             })
             return response.status(200).json(user);
 
