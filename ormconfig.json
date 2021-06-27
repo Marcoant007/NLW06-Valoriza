@@ -1,11 +1,17 @@
 {
-    "type": "sqlite",
-    "database": "src/database/database.sqlite",
-    "migrations": ["src/database/migrations/*.ts"],
-    "entities": ["src/entities/*.ts"],
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5433,
+    "username": "marco",
+    "password": "postgres",
+    "database": "nlwvaloriza",
+    "entities": [
+        "./src/entities/*.ts"
+    ],
+    "migrations": [
+        "./src/database/migrations/*.ts"
+    ],
     "cli": {
-        "migrationsDir": "src/database/migrations",
-        "entitiesDir": "src/entities"
+        "migrationsDir": "./src/database/migrations"
     }
-
 }
